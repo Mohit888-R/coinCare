@@ -41,14 +41,11 @@ const SignupPopup = ({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen: React.
     }
 
 
-    // console.log("Signup : ", open);
-    // console.log("LoginOpen : ", loginOpen);
-
     return (
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
             <DialogContent>
                 <div className="text-[2em]  font-bold select-none text-[#2bb939] text-center">CoinCare</div>
-                                   {!open && <LoginPopup isOpen={!open} setIsOpen={setIsOpen} />}
+                {<LoginPopup isOpen={!isOpen} setIsOpen={setIsOpen} />}
             </DialogContent>
         </Dialog>
 
