@@ -24,7 +24,7 @@ const formSchema = z.object({
 
 const LoginPopup = ({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen: React.Dispatch<React.SetStateAction<boolean>>; }) => {
     const [signupOpen, setSignupOpen] = useState(false);
-    const [tab, setTab] = useState<'login' | 'signup' | 'forgot' | 'reset'>('login');
+    const [tab, setTab] = useState<'login' | 'signup' | 'forgot' | 'reset' | 'successfull_reset'>('login');
     const [show, setShow] = useState(false);
 
     const form = useForm<z.infer<typeof formSchema>>({
@@ -180,7 +180,33 @@ const LoginPopup = ({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen: React.D
                         <div className="text-[2em] py-4 font-bold select-none text-[#2bb939] text-center">CoinCare</div>
                         <div className="space-y-4">
                             <Input type="email" placeholder="Email" className="rounded-full"/>
-                            <Button variant={'default'} className="w-full text-white rounded-full">Continue</Button>
+                            <Button type="submit" variant={'default'} className="w-full text-white rounded-full" onClick={()=>setTab('reset')}>Continue</Button>
+                        </div>
+                    </TabsContent>
+                    <TabsContent value="reset">
+                        <div className="flex space-x-2 items-center hover:cursor-pointer" onClick={() => setTab('login')}>
+                            <ArrowLeft />
+                            <span className='text-[20px] '>Reset Password</span>
+                        </div>
+
+                        <div className="text-[2em] py-4 font-bold select-none text-[#2bb939] text-center">CoinCare</div>
+                        <div className="space-y-4">
+                            <Input type="email" placeholder="New Password*" className="rounded-full" required/>
+                            <Input type="email" placeholder="Confirm Password*" className="rounded-full" required/>
+                            <Button type="submit" variant={'default'} className="w-full text-white rounded-full" onClick={()=>setTab('successfull_reset')}>Continue</Button>
+                        </div>
+                    </TabsContent>
+                    <TabsContent value="successfull_reset">
+                        {/* <div className="flex space-x-2 items-center hover:cursor-pointer" onClick={() => setTab('login')}>
+                            <ArrowLeft />
+                            <span className='text-[20px] '></span>
+                        </div> */}
+
+                        <div className="text-[1.5em] pt-10 font-bold select-none text-[#2bb939] text-center"> Your password changed  successfully</div>
+                        <div className="text-[1em]  font-normal px-20 py-2 select-none text-[#165c1d9a] text-center"> You have changed password successfully. And your old password overwrite with new one!</div>
+                        <div className="space-y-4">
+                            
+                            <Button type="submit" variant={'default'} className="w-full text-white rounded-full" onClick={()=>{setTab('login');}}>Okk</Button>
                         </div>
                     </TabsContent>
                 </Tabs>

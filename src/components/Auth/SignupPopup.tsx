@@ -1,15 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
-import { Eye, EyeOff, LogIn } from "lucide-react"
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog"
-import { Form, FormField, FormItem, FormLabel } from "../ui/form";
-import { Input } from "../ui/input";
+import { Dialog, DialogContent } from "../ui/dialog"
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
-import { Button } from "../ui/button";
-import { Separator } from "../ui/separator";
-import Login from "./LoginPopup";
 import LoginPopup from './LoginPopup';
 
 const formSchema = z.object({
