@@ -3,22 +3,27 @@ import SearchBar from "./SearchBar";
 import Login from "../Auth/LoginPopup";
 import LoginPopup from "../Auth/LoginPopup";
 import { useState } from "react";
+import { Button } from "../ui/button";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     return (
-        <div className="flex py-2 items-center">
+        <div className=" border-b shadow-md py-2">
             {/* logo */}
-            <div className="text-[2em]  font-bold select-none text-[#2bb939] ml-12">CoinCare</div>
-            <SearchBar />
-            <div className="flex  w-2/12 justify-evenly text-primary">
-                <Bell size={32} className="drop-shadow-xl active:scale-105 " />
-                <Bookmark size={32} className="drop-shadow-xl active:scale-105" />
-                {/* <LogIn size={32} className="drop-shadow-xl active:scale-105" /> */}
-                <LogIn size={32} className="drop-shadow-xl active:scale-105" onClick={() => setIsOpen(true)} />
-                {/* <User size={32} className="drop-shadow-xl active:scale-105"/> */}
-
-                {<LoginPopup isOpen={isOpen} setIsOpen={setIsOpen} />}
+            <div className="flex items-center justify-between container ">
+                <div className="text-[2em]  font-bold select-none  ml-12">CoinCare</div>
+                {/* <SearchBar /> */}
+                <div>
+                    <Button className=" mx-8 border border-black text-[20px] font-medium">
+                        Charity List
+                    </Button>
+                    <Button variant={'default'} className="border border-black  text-[20px] font-medium">
+                        Donate
+                    </Button>
+                    <Button className="border border-black mx-8 text-[20px] font-medium">
+                        Sign In
+                    </Button>
+                </div>
             </div>
         </div>
     )
