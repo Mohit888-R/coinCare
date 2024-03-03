@@ -26,15 +26,15 @@ export const HeroData = [
         category : 'Education'
     },
     {
-        imageUrl : '/assets/hero/art.jpg ',
+        imageUrl : '/assets/hero/art.jpg',
         category : 'Art'
     },
     {
-        imageUrl : '/assets/hero/disaster.jpg ',
+        imageUrl : '/assets/hero/disaster.jpg',
         category : 'Disaster'
     },
     {
-        imageUrl : '/assets/hero/orphanage.jpg ',
+        imageUrl : '/assets/hero/orphanage.jpg',
         category : 'Orphanage'
     },
 ]
