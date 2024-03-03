@@ -10,7 +10,7 @@ import { Separator } from "../ui/separator";
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     return (
-        <div className=" border-b  bg-black shadow-md text-white">
+        <div className=" border-b border-gray-500  bg-black shadow-md text-white">
             {/* logo */}
             <div className="flex items-center justify-between w-11/12 m-auto">
                 <div className="flex items-center gap-4 py-8">

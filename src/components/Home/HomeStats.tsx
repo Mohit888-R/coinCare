@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const HomeStats = () => {
     return (
-        <div className="container gap-12 select-none flex w-full mt-20">
+        <div className="container gap-12 select-none flex w-full mt-20 pb-28">
             {HomeStatsData.map((item, index) => (
                 <div key={index} className="w-4/12 bg-red-200 rounded-md  py-4 pb-12   text-center">
                     <Link href={item.url} className="flex justify-end "> <ArrowUpRight className="w-12 h-12  text-red-600" /> </Link>
