@@ -15,7 +15,10 @@ const Navbar = () => {
             <div className="flex items-center justify-between w-11/12 m-auto">
                 <div className="flex items-center gap-4 py-8">
                     <Image src="/assets/coincare_logo.png" width={100} height={100} alt="coincare_logo" />
-                    <span className="text-[2em]  font-bold select-none uppercase ">CoinCare</span>
+                    <div className='flex flex-col text-white'>
+                        <span className="text-[1em]  font-normal select-none uppercase "> CoinCare</span>
+                        <span className="text-[1em]  font-normal select-none uppercase "> Fundraiser</span>
+                    </div>
                 </div>
 
                 {/* <SearchBar /> */}
